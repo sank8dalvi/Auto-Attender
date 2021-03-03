@@ -4,7 +4,6 @@ __pycache__
 temp
 .vscode
 *.ipynb
-.env
 *.pickle
 schedule.csv
 
