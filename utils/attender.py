@@ -99,13 +99,19 @@ class Attender:
                     (By.XPATH, "//*[contains(text(), 'Join now')]")))
                 # Camera OFF
                 if camera_off:
-                    self.driver.find_element_by_tag_name("body").send_keys(Keys.CONTROL, "e")
+                    if self.driver.capabilities['platformName'] == 'mac os x':
+                        self.driver.find_element_by_tag_name("body").send_keys(Keys.COMMAND, "e")
+                    else:
+                        self.driver.find_element_by_tag_name("body").send_keys(Keys.CONTROL, "e")
                     # Wait until camera is off
                     WebDriverWait(self.driver, 20).until(EC.visibility_of_element_located(
                         (By.XPATH, "//*[contains(text(), 'Camera is off')]")))
                 # Mic OFF
                 if mic_off:
-                    self.driver.find_element_by_tag_name("body").send_keys(Keys.CONTROL, "d")
+                    if self.driver.capabilities['platformName'] == 'mac os x':
+                        self.driver.find_element_by_tag_name("body").send_keys(Keys.COMMAND, "d")
+                    else:
+                        self.driver.find_element_by_tag_name("body").send_keys(Keys.CONTROL, "d")
                     # Wait until camera is off
                     WebDriverWait(self.driver, 20).until(EC.visibility_of_element_located(
                         (By.XPATH, "//*[contains(text(), 'Microphone off')]")))
