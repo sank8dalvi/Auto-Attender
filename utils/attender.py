@@ -83,9 +83,9 @@ class Attender:
             meetcodefield.click()
             meetcodefield.send_keys(meetcode)
             WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(
-                (By.XPATH, '//*[@id="yDmH0d"]/c-wiz/div/div[2]/div/div[1]/div[3]/div/div[2]/button/div[2]')))
+                (By.XPATH, "//*[contains(text(), 'Join')]/..")))
             self.driver.find_element_by_xpath(
-                '//*[@id="yDmH0d"]/c-wiz/div/div[2]/div/div[1]/div[3]/div/div[2]/button/div[2]').click()
+                "//*[contains(text(), 'Join')]/..").click()
 
             if self.block_chrome_mic_camera:
                 WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(
