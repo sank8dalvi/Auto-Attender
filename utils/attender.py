@@ -95,7 +95,7 @@ class Attender:
                     '//*[@id="yDmH0d"]/div[3]/div/div[2]/div[3]/div/span').click()
             else:
                 # Wait till Join Now Button appears
-                WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(
+                WebDriverWait(self.driver, 40).until(EC.element_to_be_clickable(
                     (By.XPATH, "//*[contains(text(), 'Join now')]")))
                 # Camera OFF
                 if camera_off:
